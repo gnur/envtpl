@@ -30,7 +30,6 @@ func Version() string {
 		suffix += "-" + AppVersionMetadata
 	}
 
-	return fmt.Sprintf("%s %d.%d.%d%s (Go runtime %s).\nCopyright (c) 2016-2019, Tony Pujals.",
+	return fmt.Sprintf("%s %d.%d.%d%s (Go runtime %s).\nCopyright (c) 2016-2020, Tony Pujals & Erwin de Keijzer.",
 		AppName, AppVersionMajor, AppVersionMinor, AppVersionPatch, suffix, runtime.Version())
 }
-

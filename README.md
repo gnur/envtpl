@@ -1,6 +1,4 @@
-
-[![Docker Pulls](https://img.shields.io/docker/pulls/subfuzion/envtpl.svg)](https://hub.docker.com/r/subfuzion/envtpl/)
-
+This was forked from: https://github.com/subfuzion/envtpl
 
 # envtpl
 
@@ -23,7 +21,7 @@ match the keys of the internal environment variable map object (see example).
 
 ## Get it
 
-    $ go get github.com/subfuzion/envtpl/...
+    $ go get github.com/gnur/envtpl/...
 
 ## Usage
 
@@ -98,32 +96,6 @@ GOPATH => /Users/tony/go
 GOROOT => /usr/local/go
 ```
 
-## Building an envtpl Docker image
-
-[![Docker Build Status](https://img.shields.io/docker/build/subfuzion/envtpl.svg)](https://hub.docker.com/r/subfuzion/envtpl/)
-
-An image is available on Docker Hub [subfuzion/envtpl](https://hub.docker.com/r/subfuzion/envtpl/)
-
-You can use run a container like this:
-
-    $ echo 'Hello {{ .NAME | title | printf "%s\n" }}' | docker run -i --rm -e NAME=world subfuzion/envtpl
-    Hello World
-    
-    # using a gist
-    $ curl -s https://gist.githubusercontent.com/subfuzion/d5a6e3b7c2577902408069deb1d8e4d7/raw/2e4c0b894e2983411a20ffa5ee84aeafa5c6ebfb/greeting.tpl | docker run -i -e USER=$USER subfuzion/envtpl
-    Hello, Tony
-
-
-To build your own local container:
-
-	$ make image
-
-The final image is based on `scratch` and weighs in at less than 7MB:
-
-```bash
-$ docker images --format "{{ .Repository }}:{{ .Tag }} => {{ .Size }}" subfuzion/envtpl
-subfuzion/envtpl:latest => 6.65MB
-```
 	
 ## Test
 
@@ -156,7 +128,7 @@ Neither of these two packages appear to conform to the original `envtpl` command
 
 ## License
 
-[MIT](https://raw.githubusercontent.com/subfuzion/envtpl/master/LICENSE)
+[MIT](https://raw.githubusercontent.com/gnur/envtpl/master/LICENSE)
 
 
 [arschles/envtpl]:     https://github.com/arschles/envtpl
